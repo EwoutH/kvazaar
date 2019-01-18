@@ -26,3 +26,16 @@ build_script:
 
 cache:
   - C:\msys64\var\cache\pacman\pkg
+  
+artifacts:
+    - path: \**\kvazaar.exe
+      name: kvazaar
+      
+deploy:
+  - provider: GitHub
+    artifact: \**\kvazaar.exe
+    auth_token:
+      secure: hY5Mk6KOwgQ97TzEBsM7Woqr1ZIm5QTvHg8EvxMV1x8j3wk/3mNBMqWFFbEIBK0i
+    prerelease: true
+    on:
+      appveyor_repo_tag: true
